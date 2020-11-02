@@ -1,3 +1,4 @@
+import 'package:first_app/Screens/Login/login_screen.dart';
 import 'package:first_app/components/rounded_button.dart';
 import 'package:first_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -23,16 +24,27 @@ class Body extends StatelessWidget {
               "assets/icons/chat.svg",
               height: size.height * 0.45,
             ),
-            SizedBox(height: size.height * 0.03,),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
             RoundedButton(
               text: "LOGIN",
-              press: (){},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
             RoundedButton(
               text: "SIGNUP",
               color: kPrimaryLightColor,
               textColor: Colors.black,
-              press: (){},
+              press: () {},
             ),
           ],
         ),
